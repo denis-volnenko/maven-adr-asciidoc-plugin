@@ -1,0 +1,24 @@
+---
+title: Сервер управления базами данных для сервисов
+group: Базы данных
+status: Согласовано
+date: 28.03.2025
+
+issue: Какой выбрать СУБД для сервисов?
+changeLog:
+
+decision:
+considerations:
+assumptions:
+consequences:
+constraints:
+positions:
+arguments:
+
+references:
+relatedArtifacts:
+relatedDecisions:
+relatedPrinciples:
+relatedRequirements:
+
+notes:
