@@ -16,8 +16,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Mojo(name = "generate", defaultPhase = LifecyclePhase.COMPILE)
+@Mojo(name = Generator.GENERATE, defaultPhase = LifecyclePhase.COMPILE)
 public final class Generator extends AbstractMojo {
+
+    @NonNull
+    public static final String GENERATE = "generate";
 
     @NonNull
     private static final String TITLE = "title";
@@ -25,17 +28,14 @@ public final class Generator extends AbstractMojo {
     @NonNull
     private static final String GROUP = "group";
 
-    @NonNull
-    private static final String GENERATE = "generate";
-
     @Getter
     @Setter
-    @Parameter(property = "title")
+    @Parameter(property = TITLE)
     private String title;
 
     @Getter
     @Setter
-    @Parameter(property = "group")
+    @Parameter(property = GROUP)
     private String group;
 
     @Getter
