@@ -48,6 +48,11 @@ public final class Generator extends AbstractMojo {
 
     @Getter
     @Setter
+    @Parameter(property = "responsibles")
+    private List<String> responsibles;
+
+    @Getter
+    @Setter
     @Parameter(property = "changeLog")
     private List<String> changeLog;
 
