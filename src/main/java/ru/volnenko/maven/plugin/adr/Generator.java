@@ -1,6 +1,7 @@
 package ru.volnenko.maven.plugin.adr;
 
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 
 import org.apache.maven.plugin.AbstractMojo;
@@ -11,10 +12,21 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Mojo(name = "generate", defaultPhase = LifecyclePhase.COMPILE)
 public final class Generator extends AbstractMojo {
+
+    @NonNull
+    private static final String TITLE = "title";
+
+    @NonNull
+    private static final String GROUP = "group";
+
+    @NonNull
+    private static final String GENERATE = "generate";
 
     @Getter
     @Setter
@@ -71,8 +83,19 @@ public final class Generator extends AbstractMojo {
     @Parameter(property = "files")
     private List<String> files = new ArrayList<>();
 
+    private Map<String, Object> getData() {
+        @NonNull final Map<String, Object> result = new HashMap<String, Object>();
+        result.put(TITLE, title);
+        result.put(GROUP, group);
+        return result;
+    }
+
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
+
+    }
+
+    private void header() {
 
     }
 
